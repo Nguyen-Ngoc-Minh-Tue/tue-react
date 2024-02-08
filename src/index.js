@@ -7,8 +7,6 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Router from './asset/Router';
 import Redux from './asset/Redux';
 import Toolkit from './asset/Toolkit';
-import Select from './asset/Select';
-import Bootstrap from './asset/Bootstrap';
 
 const router = createBrowserRouter([
     {
@@ -22,18 +20,10 @@ const router = createBrowserRouter([
     {
         path: "/react-redux",
         element: <Redux />
-    }, 
+    },
     {
         path: "/redux-toolkit",
         element: <Toolkit />
-    },
-    {
-        path: "/react-select",
-        element: <Select />
-    },
-    {
-        path: "/react-bootstrap",
-        element: <Bootstrap />
     }
 ])
 

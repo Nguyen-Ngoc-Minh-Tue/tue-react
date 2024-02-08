@@ -4,7 +4,7 @@ import Search from "./Search";
 const SearchList = ({ searchList }) => {
     return (
         <div>
-            <ul>{searchList.map((item) => <Search item={item} />)}</ul>
+            {searchList.map((item) => <Search key={item} item={item} />)}
         </div>
     )
 }

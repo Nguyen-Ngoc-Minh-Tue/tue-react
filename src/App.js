@@ -4,7 +4,6 @@ import Button from '@atlaskit/button';
 import { useState } from 'react';
 import SearchList from './components/SearchList';
 
-
 function App() {
   const [textInput, setTextInput] = useState('')
   const [searchList, setSearchList] = useState([])
@@ -16,7 +15,11 @@ function App() {
     setSearchList(state => [textInput])
     setTextInput("")
   }
-  console.log(searchList)
+  const onTextKeyDown = (e) => {
+    if (e.key === "Enter") {
+      onFindBtnClick()
+    }
+  }
   return (
     <div>
       <h3>Search package</h3>
@@ -32,9 +35,10 @@ function App() {
             Search
           </Button>
         }
-        css={{ padding:'2px 4px 2px'}}
+        css={{ padding: '2px 4px 2px' }}
         value={textInput}
         onChange={onTextInputChange}
+        onKeyDown={onTextKeyDown}
       ></Textfield>
       <SearchList searchList={searchList} />
     </div>
